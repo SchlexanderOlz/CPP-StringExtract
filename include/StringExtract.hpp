@@ -48,4 +48,7 @@ namespace str_extract
      */
     void Trim(string &input);
 
+    bool Contains(const string &base, const string &search);
+
+
 } // namespace str_extract

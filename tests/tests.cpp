@@ -21,6 +21,15 @@ Test(TrimTest, SpaceTrimTest) {
 Test(ExtractSubStr, ExtractTest) {
     string test_str = "I like this string (not) but actually I don't (yes)";
     vector<string> extracted = ExtractSubStr(test_str, '(', ')');
-    cout << extracted[0] << endl;
     cr_assert(extracted[0] == "not" && extracted[1] == "yes");
+}
+
+Test(Contains, ContainsTest) {
+    string test_str = "Is sour mom gae?";
+    cr_assert(Contains(test_str, "gae"));
+}
+
+Test(Contains, DoesntContainsTest) {
+    string test_str = "How has your day been?";
+    cr_assert(!Contains(test_str, "yesterday"));
 }

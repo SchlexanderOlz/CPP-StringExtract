@@ -59,6 +59,26 @@ void str_extract::Trim(string &str)
                        { return ch != ' ' && ch != '\n'; })
                    .base();
     // If the start and end indexes fall back on eachother the string is empty
-    
+
     str = (start < end) ? string(start, end) : "";
+}
+
+bool str_extract::Contains(const string &base, const string &search)
+{
+    // First increase the second iterator -> then increase the first iterator and reset the second iterator to a postion which is the closest further right than it's previous decision
+    size_t last_end = 0;
+    size_t size = search.size();
+
+    while (true)
+    {
+        size_t start = base.find(search.front(), last_end);
+        if (start == string::npos || start == last_end) { return false; }
+
+        if (base.substr(start, size) == search)
+        {
+            return true;
+        }
+
+        last_end = start;
+    }
 }
