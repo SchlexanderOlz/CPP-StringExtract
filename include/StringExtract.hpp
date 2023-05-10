@@ -48,6 +48,12 @@ namespace str_extract
      */
     void Trim(string &input);
 
+    /**
+     * @param base The base string which should be checked for the substring
+     * @param search The substring for which should be checked in base
+     * @brief Checks if a given substring is contained in a base string
+     * @return If the string is contained
+    */
     bool Contains(const string &base, const string &search);
 
 
